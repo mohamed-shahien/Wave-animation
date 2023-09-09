@@ -1,0 +1,54 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.page{
+    min-height: 100vh;
+}
+.page::before {
+    content: '';
+    background-color: #0084ff;
+    position: fixed;
+    z-index: -1;
+    width: 300%;
+    height: 100%;
+    top: 50%;
+    left: 50%; /*==============================???*/
+    border-radius: 50%;
+    transform: translateX(-50%) skew(0, -10deg);
+    animation: wave 2s ease-in-out infinite alternate ;
+}
+@keyframes wave {
+    from {
+        transform: translateX(-50%) skew(0, -10deg);
+    }
+    to {
+        transform: translateX(-30%) skew(10deg, 0);
+    }
+}
+.page .card {
+    position: absolute;
+    width: 300px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 0 10px #ddd inset ;
+}
+.page .card h3 {
+    color: black;
+    margin-bottom: 10px;
+}
+.page .card img {
+    max-width: 100%;
+}
